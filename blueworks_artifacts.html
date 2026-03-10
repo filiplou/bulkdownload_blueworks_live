@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueworks Artifacts - First 100 Results</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .header .stats { font-size: 1.1em; opacity: 0.9; }
+        .navigation { background: #f8f9fa; padding: 20px 30px; border-bottom: 2px solid #e9ecef; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .quick-link { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 1em; font-weight: 600; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
+        .quick-link:hover { background: #218838; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4); }
+        .table-container { overflow-x: auto; padding: 30px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+        thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; position: sticky; top: 0; z-index: 10; }
+        th { padding: 15px 12px; text-align: left; font-weight: 600; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
+        td { padding: 12px; border-bottom: 1px solid #e9ecef; vertical-align: middle; }
+        .download-btn { padding: 6px 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: all 0.2s ease; text-decoration: none; display: inline-block; margin-right: 5px; }
+        .download-btn:hover { background: #0056b3; transform: scale(1.05); }
+        .download-btn:disabled { background: #6c757d; cursor: not-allowed; opacity: 0.5; }
+        .download-btn.bpmn { background: #17a2b8; }
+        .download-btn.bpmn:hover { background: #138496; }
+        tbody tr { transition: background-color 0.2s ease; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        tbody tr:nth-child(even):hover { background-color: #e9ecef; }
+        .type-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 600; text-transform: uppercase; }
+        .type-blueprint { background: #e3f2fd; color: #1976d2; }
+        .type-space { background: #f3e5f5; color: #7b1fa2; }
+        .type-policy { background: #fff3e0; color: #f57c00; }
+        .type-decision { background: #e8f5e9; color: #388e3c; }
+        .type-processapp { background: #fce4ec; color: #c2185b; }
+        .status-active { color: #28a745; font-weight: 600; }
+        .status-inactive { color: #dc3545; font-weight: 600; }
+        .footer { background: #f8f9fa; padding: 20px 30px; text-align: center; color: #6c757d; border-top: 2px solid #e9ecef; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            table { font-size: 0.85em; }
+            th, td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔷 Blueworks Artifacts Viewer</h1>
+            <div class="stats">Displaying First 100 of 14,065 Total Artifacts</div>
+        </div>
+        <div class="navigation">
+            <button id="bulkDownloadBtn" class="quick-link" style="background: #dc3545;" onclick="bulkDownloadBlueprints()">📥 Bulk Download All Blueprints (PDF)</button>
+            <button id="bulkDownloadBPMNBtn" class="quick-link" style="background: #17a2b8;" onclick="bulkDownloadBPMN()">📊 Bulk Download All BPMN</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Space Name</th>
+                        <th>Status</th>
+                        <th>Created By</th>
+                        <th>Created Date</th>
+                        <th>Last Modified</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed27', 'M3 16.0 Manage Information Systems')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed27', 'M3 16.0 Manage Information Systems')">📊 BPMN</button></td>
+                        <td>1</td>
+                        <td><strong>M3 16.0 Manage Information Systems</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>CP4A Enterprise Processes</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('63eb1f6b7e', 'Application Support Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('63eb1f6b7e', 'Application Support Process')">📊 BPMN</button></td>
+                        <td>2</td>
+                        <td><strong>Application Support Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Copy of WC 3</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:16 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('64eb1f6b7f', 'M3 4.2.3.52 Wayleaves Compulsory Acquisition Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('64eb1f6b7f', 'M3 4.2.3.52 Wayleaves Compulsory Acquisition Process')">📊 BPMN</button></td>
+                        <td>3</td>
+                        <td><strong>M3 4.2.3.52 Wayleaves Compulsory Acquisition Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>04.0 Procurement and Supply Chain</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:27 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20000583e4b3c16', 'Hiring - Onboarding')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20000583e4b3c16', 'Hiring - Onboarding')">📊 BPMN</button></td>
+                        <td>4</td>
+                        <td><strong>Hiring - Onboarding</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>IBM BPM PoT v8</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User2</td>
+                        <td>Wed Nov 28 15:41:04 CST 2012</td>
+                        <td>Wed Nov 28 17:36:24 CST 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('28ef606f4e', 'Canvas 5')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('28ef606f4e', 'Canvas 5')">📊 BPMN</button></td>
+                        <td>5</td>
+                        <td><strong>Canvas 5</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Invoice Processing</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User1</td>
+                        <td>Tue Sep 02 22:42:27 CDT 2025</td>
+                        <td>Tue Sep 02 22:42:27 CDT 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6f8b', 'M3 16.5.2.5 Monitor and Report Release')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6f8b', 'M3 16.5.2.5 Monitor and Report Release')">📊 BPMN</button></td>
+                        <td>6</td>
+                        <td><strong>M3 16.5.2.5 Monitor and Report Release</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('60ebeb6b86', 'My first blueprint')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('60ebeb6b86', 'My first blueprint')">📊 BPMN</button></td>
+                        <td>7</td>
+                        <td><strong>My first blueprint</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User3 Training Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User3</td>
+                        <td>Tue Mar 06 21:36:27 CST 2018</td>
+                        <td>Tue Mar 06 21:41:17 CST 2018</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('10000e03ee93f19', 'Hiring - Onboarding')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('10000e03ee93f19', 'Hiring - Onboarding')">📊 BPMN</button></td>
+                        <td>8</td>
+                        <td><strong>Hiring - Onboarding</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>HR Hiring</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User4</td>
+                        <td>Wed May 01 03:22:06 CDT 2013</td>
+                        <td>Mon Jan 13 21:44:35 CST 2014</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ead56ae2', 'Wastewater Discharge Licence/Permit Application/Review (NOT USED)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ead56ae2', 'Wastewater Discharge Licence/Permit Application/Review (NOT USED)')">📊 BPMN</button></td>
+                        <td>9</td>
+                        <td><strong>Wastewater Discharge Licence/Permit Application/Review (NOT USED)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>01.0 Manage Business and Regulation</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:44:28 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('30eca7ec86', 'User6 Getting Started Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('30eca7ec86', 'User6 Getting Started Process')">📊 BPMN</button></td>
+                        <td>10</td>
+                        <td><strong>User6 Getting Started Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User6 Training Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User6</td>
+                        <td>Thu Dec 26 23:15:26 CST 2019</td>
+                        <td>Mon Jun 27 22:47:15 CDT 2022</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('1febc9ebc4', 'M3 12.3.1.9 Operational Control - Permits to Work (PTW)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('1febc9ebc4', 'M3 12.3.1.9 Operational Control - Permits to Work (PTW)')">📊 BPMN</button></td>
+                        <td>11</td>
+                        <td><strong>M3 12.3.1.9 Operational Control - Permits to Work (PTW)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>12.0 Manage HSQE</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6f92', 'M3 16.5.2.6 Review and Close Release')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6f92', 'M3 16.5.2.6 Review and Close Release')">📊 BPMN</button></td>
+                        <td>12</td>
+                        <td><strong>M3 16.5.2.6 Review and Close Release</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('25ead56ae9', 'M3 17.3.1.4 Vehicle Taxing')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('25ead56ae9', 'M3 17.3.1.4 Vehicle Taxing')">📊 BPMN</button></td>
+                        <td>13</td>
+                        <td><strong>M3 17.3.1.4 Vehicle Taxing</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>17.0 Manage Legal and Property</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:44:17 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23ead56aef', 'M3 16.8.5.7 Evaluate Knowledge Management Performance')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23ead56aef', 'M3 16.8.5.7 Evaluate Knowledge Management Performance')">📊 BPMN</button></td>
+                        <td>14</td>
+                        <td><strong>M3 16.8.5.7 Evaluate Knowledge Management Performance</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:43:53 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('21ebc96bf2', 'M3.2 3.2.7.1 Dom &amp; Non-Dom Manage AP Procedures - Generate Refund')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('21ebc96bf2', 'M3.2 3.2.7.1 Dom &amp; Non-Dom Manage AP Procedures - Generate Refund')">📊 BPMN</button></td>
+                        <td>15</td>
+                        <td><strong>M3.2 3.2.7.1 Dom &amp; Non-Dom Manage AP Procedures - Generate Refund</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Non Domestic</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>16</td>
+                        <td><strong>aussiebb approval</strong></td>
+                        <td><span class="type-badge type-processapp">Process App</span></td>
+                        <td>AussieBB</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Aug 23 19:45:02 CDT 2023</td>
+                        <td>Wed Aug 23 19:45:43 CDT 2023</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('10000ae3d3e3c8d', 'Develop products and services')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('10000ae3d3e3c8d', 'Develop products and services')">📊 BPMN</button></td>
+                        <td>17</td>
+                        <td><strong>Develop products and services</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Lorenco&#x27;s Playground</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User7</td>
+                        <td>Wed Oct 05 22:37:17 CDT 2011</td>
+                        <td>Wed Oct 05 22:37:18 CDT 2011</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('48ec726c25', '9.2 Giving instruction to claim/retain unclaimed benefit')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('48ec726c25', '9.2 Giving instruction to claim/retain unclaimed benefit')">📊 BPMN</button></td>
+                        <td>18</td>
+                        <td><strong>9.2 Giving instruction to claim/retain unclaimed benefit</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>eMPF</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User8</td>
+                        <td>Tue Jun 04 06:29:17 CDT 2019</td>
+                        <td>Tue Jun 04 06:33:25 CDT 2019</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6fa2', 'M3 16.5.2.1 Establish Release Management Framework')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6fa2', 'M3 16.5.2.1 Establish Release Management Framework')">📊 BPMN</button></td>
+                        <td>19</td>
+                        <td><strong>M3 16.5.2.1 Establish Release Management Framework</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('24ebc96bc8', 'M3 16.7.3 Availability Management')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('24ebc96bc8', 'M3 16.7.3 Availability Management')">📊 BPMN</button></td>
+                        <td>20</td>
+                        <td><strong>M3 16.7.3 Availability Management</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23d613d45', '1.2.2.2.5_Another Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23d613d45', '1.2.2.2.5_Another Process')">📊 BPMN</button></td>
+                        <td>21</td>
+                        <td><strong>1.2.2.2.5_Another Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Telecom - New Zealand</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User10</td>
+                        <td>Sat Dec 10 04:13:56 CST 2011</td>
+                        <td>Mon Jan 16 01:54:13 CST 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6b5d', 'M3 8.1.11.4.1 Maintain RAB Book')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6b5d', 'M3 8.1.11.4.1 Maintain RAB Book')">📊 BPMN</button></td>
+                        <td>22</td>
+                        <td><strong>M3 8.1.11.4.1 Maintain RAB Book</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:40 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('68eb1f6b50', 'M2 17.9.3 Statutory Body - Day to Day Interaction')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('68eb1f6b50', 'M2 17.9.3 Statutory Body - Day to Day Interaction')">📊 BPMN</button></td>
+                        <td>23</td>
+                        <td><strong>M2 17.9.3 Statutory Body - Day to Day Interaction</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>17.0 Manage Legal and Property</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:15:18 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6fad', 'M3 16.5.2.7 Evaluate Release Management Performance')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6fad', 'M3 16.5.2.7 Evaluate Release Management Performance')">📊 BPMN</button></td>
+                        <td>24</td>
+                        <td><strong>M3 16.5.2.7 Evaluate Release Management Performance</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed09', 'M2 12.05 Accidents, Incidents, and Emergency Response')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed09', 'M2 12.05 Accidents, Incidents, and Emergency Response')">📊 BPMN</button></td>
+                        <td>25</td>
+                        <td><strong>M2 12.05 Accidents, Incidents, and Emergency Response</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>12.0 Manage HSQE</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('44eca9ecc3', '3.14 Book special park events')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('44eca9ecc3', '3.14 Book special park events')">📊 BPMN</button></td>
+                        <td>26</td>
+                        <td><strong>3.14 Book special park events</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>HKDL Mobile</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User11</td>
+                        <td>Tue Jan 07 21:12:33 CST 2020</td>
+                        <td>Tue Jan 07 21:12:34 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23ebc96bde', 'Copy of 2.2.6.53 Notification of Deceased Customer')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23ebc96bde', 'Copy of 2.2.6.53 Notification of Deceased Customer')">📊 BPMN</button></td>
+                        <td>27</td>
+                        <td><strong>Copy of 2.2.6.53 Notification of Deceased Customer</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>02.0 Manage Customer Service</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>28</td>
+                        <td><strong>User12 Training Space</strong></td>
+                        <td><span class="type-badge type-space">Space</span></td>
+                        <td>Blueworks Live Training</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User12</td>
+                        <td>Thu Sep 07 01:22:25 CDT 2017</td>
+                        <td>Thu Sep 07 01:22:25 CDT 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('58eba96bcd', 'User12 Getting Started Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('58eba96bcd', 'User12 Getting Started Process')">📊 BPMN</button></td>
+                        <td>29</td>
+                        <td><strong>User12 Getting Started Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User12 Training Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User12</td>
+                        <td>Thu Sep 07 01:22:25 CDT 2017</td>
+                        <td>Mon Jun 27 22:47:15 CDT 2022</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('24ebc96bd0', 'M3 16.2.7 Customer Satisfaction Management')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('24ebc96bd0', 'M3 16.2.7 Customer Satisfaction Management')">📊 BPMN</button></td>
+                        <td>30</td>
+                        <td><strong>M3 16.2.7 Customer Satisfaction Management</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>31</td>
+                        <td><strong>fee calculation</strong></td>
+                        <td><span class="type-badge type-decision">Decision</span></td>
+                        <td>AussieBB</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Aug 23 19:47:02 CDT 2023</td>
+                        <td>Wed Aug 23 19:48:26 CDT 2023</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('27ed03ed61', 'M3.1 8.6.2.23 Post Sort and Scan')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('27ed03ed61', 'M3.1 8.6.2.23 Post Sort and Scan')">📊 BPMN</button></td>
+                        <td>32</td>
+                        <td><strong>M3.1 8.6.2.23 Post Sort and Scan</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed63', 'M3 16.4 Realization')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed63', 'M3 16.4 Realization')">📊 BPMN</button></td>
+                        <td>33</td>
+                        <td><strong>M3 16.4 Realization</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('22ebc9ebac', 'M3.0 2.3.3.6 Manage Meter Data Errors')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('22ebc9ebac', 'M3.0 2.3.3.6 Manage Meter Data Errors')">📊 BPMN</button></td>
+                        <td>34</td>
+                        <td><strong>M3.0 2.3.3.6 Manage Meter Data Errors</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>02.0 Manage Customer Service</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96ba1', '15.4.3.4 Review compensation plan')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96ba1', '15.4.3.4 Review compensation plan')">📊 BPMN</button></td>
+                        <td>35</td>
+                        <td><strong>15.4.3.4 Review compensation plan</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>36</td>
+                        <td><strong>Regulation holding space</strong></td>
+                        <td><span class="type-badge type-space">Space</span></td>
+                        <td>01.0 Manage Business and Regulation</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23ead56ab8', 'M3 16.8.5.1 Establish Knowledge Management Framework')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23ead56ab8', 'M3 16.8.5.1 Establish Knowledge Management Framework')">📊 BPMN</button></td>
+                        <td>37</td>
+                        <td><strong>M3 16.8.5.1 Establish Knowledge Management Framework</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:43:53 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed6a', 'M3 16.5 Transition')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed6a', 'M3 16.5 Transition')">📊 BPMN</button></td>
+                        <td>38</td>
+                        <td><strong>M3 16.5 Transition</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('27ed036d6b', 'old? 1.4a 1 Manage regulatory Stakeholder management')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('27ed036d6b', 'old? 1.4a 1 Manage regulatory Stakeholder management')">📊 BPMN</button></td>
+                        <td>39</td>
+                        <td><strong>old? 1.4a 1 Manage regulatory Stakeholder management</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Regulation holding space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>40</td>
+                        <td><strong>QGC Global Training Space</strong></td>
+                        <td><span class="type-badge type-space">Space</span></td>
+                        <td></td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Tue Sep 03 18:22:27 CDT 2013</td>
+                        <td>Thu Aug 24 21:53:51 CDT 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>41</td>
+                        <td><strong>test</strong></td>
+                        <td><span class="type-badge type-policy">Policy</span></td>
+                        <td>Finance</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Sep 28 20:54:35 CDT 2016</td>
+                        <td>Wed Sep 28 20:54:43 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed71', 'M3 16.6 Operations')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed71', 'M3 16.6 Operations')">📊 BPMN</button></td>
+                        <td>42</td>
+                        <td><strong>M3 16.6 Operations</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('a5ec47ecb7', '9a. (To-Be) Agile Lifecycle 1')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('a5ec47ecb7', '9a. (To-Be) Agile Lifecycle 1')">📊 BPMN</button></td>
+                        <td>43</td>
+                        <td><strong>9a. (To-Be) Agile Lifecycle 1</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>HKEX - Ops</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User13</td>
+                        <td>Thu Jan 31 01:38:59 CST 2019</td>
+                        <td>Tue Feb 26 02:20:06 CST 2019</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('29ed036d73', '15.5.9.1 Manage Expatriates')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('29ed036d73', '15.5.9.1 Manage Expatriates')">📊 BPMN</button></td>
+                        <td>44</td>
+                        <td><strong>15.5.9.1 Manage Expatriates</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>M2 Copy of 15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed7f', 'M3 16.8 Administration')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed7f', 'M3 16.8 Administration')">📊 BPMN</button></td>
+                        <td>45</td>
+                        <td><strong>M3 16.8 Administration</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('7ef8c6fd1', 'M3.2 3.1.4.5 Dom &amp; Non-Dom Review Special Meter Read')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('7ef8c6fd1', 'M3.2 3.1.4.5 Dom &amp; Non-Dom Review Special Meter Read')">📊 BPMN</button></td>
+                        <td>46</td>
+                        <td><strong>M3.2 3.1.4.5 Dom &amp; Non-Dom Review Special Meter Read</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>03.0 Bill &amp; Collect</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed78', 'M3 16.7 Resilience')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed78', 'M3 16.7 Resilience')">📊 BPMN</button></td>
+                        <td>47</td>
+                        <td><strong>M3 16.7 Resilience</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('22ead56aa8', 'M3 7.8.3.3 Minor Capital Confirm &amp; Feedback Completion')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('22ead56aa8', 'M3 7.8.3.3 Minor Capital Confirm &amp; Feedback Completion')">📊 BPMN</button></td>
+                        <td>48</td>
+                        <td><strong>M3 7.8.3.3 Minor Capital Confirm &amp; Feedback Completion</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>07.0 Asset Creation</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:43:45 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('8ef8c6fe5', 'M3 17.4.1.26 Develop Notice &amp; Poster Policy')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('8ef8c6fe5', 'M3 17.4.1.26 Develop Notice &amp; Poster Policy')">📊 BPMN</button></td>
+                        <td>49</td>
+                        <td><strong>M3 17.4.1.26 Develop Notice &amp; Poster Policy</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>17.0 Manage Legal and Property</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('66eb1feb1a', 'M1 2.2.6.9 Move Out Move In')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('66eb1feb1a', 'M1 2.2.6.9 Move Out Move In')">📊 BPMN</button></td>
+                        <td>50</td>
+                        <td><strong>M1 2.2.6.9 Move Out Move In</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>02.0 Manage Customer Service</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:15:00 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6b13', 'M3 8.1.6.5 Identify required Corrective Actions and proactive initiatives')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6b13', 'M3 8.1.6.5 Identify required Corrective Actions and proactive initiatives')">📊 BPMN</button></td>
+                        <td>51</td>
+                        <td><strong>M3 8.1.6.5 Identify required Corrective Actions and proactive initiatives</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:49 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23ead56a9b', 'M3 16.7.6.4. Create and Maintain IT Service Continuity Plan')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23ead56a9b', 'M3 16.7.6.4. Create and Maintain IT Service Continuity Plan')">📊 BPMN</button></td>
+                        <td>52</td>
+                        <td><strong>M3 16.7.6.4. Create and Maintain IT Service Continuity Plan</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:43:53 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6b0b', 'M3 8.1.6.3 Identify required Corrective Actions and proactive initiatives (Balanced Scorecard)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6b0b', 'M3 8.1.6.3 Identify required Corrective Actions and proactive initiatives (Balanced Scorecard)')">📊 BPMN</button></td>
+                        <td>53</td>
+                        <td><strong>M3 8.1.6.3 Identify required Corrective Actions and proactive initiatives (Balanced Scorecard)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:49 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed57', 'M3 16.2. Customer Relationships')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed57', 'M3 16.2. Customer Relationships')">📊 BPMN</button></td>
+                        <td>54</td>
+                        <td><strong>M3 16.2. Customer Relationships</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('e33e2fbebf', 'Order Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('e33e2fbebf', 'Order Process')">📊 BPMN</button></td>
+                        <td>55</td>
+                        <td><strong>Order Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User5 Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User5</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b9d', '15.4.3.3 Review retention and motivation indicators')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b9d', '15.4.3.3 Review retention and motivation indicators')">📊 BPMN</button></td>
+                        <td>56</td>
+                        <td><strong>15.4.3.3 Review retention and motivation indicators</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('a5ec47ec96', '16. To be Status - Service Request (External)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('a5ec47ec96', '16. To be Status - Service Request (External)')">📊 BPMN</button></td>
+                        <td>57</td>
+                        <td><strong>16. To be Status - Service Request (External)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>HKEX - Ops</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User13</td>
+                        <td>Thu Jan 31 01:38:23 CST 2019</td>
+                        <td>Wed Apr 17 03:16:12 CDT 2019</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('e33e2fbeb8', 'Customer')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('e33e2fbeb8', 'Customer')">📊 BPMN</button></td>
+                        <td>58</td>
+                        <td><strong>Customer</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User5 Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User5</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('1eebc96baf', 'Copy of M3 1.3.1.1 Manage Drinking Water Reporting')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('1eebc96baf', 'Copy of M3 1.3.1.1 Manage Drinking Water Reporting')">📊 BPMN</button></td>
+                        <td>59</td>
+                        <td><strong>Copy of M3 1.3.1.1 Manage Drinking Water Reporting</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>01.0 Manage Business and Regulation</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6b02', 'M3 8.1.6.1 Compile Balanced Scorecard')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6b02', 'M3 8.1.6.1 Compile Balanced Scorecard')">📊 BPMN</button></td>
+                        <td>60</td>
+                        <td><strong>M3 8.1.6.1 Compile Balanced Scorecard</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:44 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03ed5c', 'M3 16.3 Direction')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03ed5c', 'M3 16.3 Direction')">📊 BPMN</button></td>
+                        <td>61</td>
+                        <td><strong>M3 16.3 Direction</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>62</td>
+                        <td><strong>original sharepoint document</strong></td>
+                        <td><span class="type-badge type-policy">Policy</span></td>
+                        <td>01.0 Manage Business and Regulation</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>63</td>
+                        <td><strong>User14 Training Space</strong></td>
+                        <td><span class="type-badge type-space">Space</span></td>
+                        <td>Blueworks Live Training</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User14</td>
+                        <td>Tue Mar 22 03:48:40 CDT 2016</td>
+                        <td>Tue Mar 22 03:48:55 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b95', '15.4.3.1 Deliver programs to support work/life balance for employees')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b95', '15.4.3.1 Deliver programs to support work/life balance for employees')">📊 BPMN</button></td>
+                        <td>64</td>
+                        <td><strong>15.4.3.1 Deliver programs to support work/life balance for employees</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>65</td>
+                        <td><strong>Copy of CR</strong></td>
+                        <td><span class="type-badge type-space">Space</span></td>
+                        <td>User14 Training Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User14</td>
+                        <td>Tue Apr 05 22:34:44 CDT 2016</td>
+                        <td>Tue Apr 05 22:34:51 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('1eebc9ebaa', 'M2 - M3 8.6.3.2 Relevant Contracts Tax (RCT)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('1eebc9ebaa', 'M2 - M3 8.6.3.2 Relevant Contracts Tax (RCT)')">📊 BPMN</button></td>
+                        <td>66</td>
+                        <td><strong>M2 - M3 8.6.3.2 Relevant Contracts Tax (RCT)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('e33e2fbeb1', 'INPEX Success')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('e33e2fbeb1', 'INPEX Success')">📊 BPMN</button></td>
+                        <td>67</td>
+                        <td><strong>INPEX Success</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User5 Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User5</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                        <td>Tue Oct 16 02:04:53 CDT 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('3eeb076b47', 'FSD01 - Refund of Revenue')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('3eeb076b47', 'FSD01 - Refund of Revenue')">📊 BPMN</button></td>
+                        <td>68</td>
+                        <td><strong>FSD01 - Refund of Revenue</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Copy of CR</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User14</td>
+                        <td>Tue Apr 05 22:34:44 CDT 2016</td>
+                        <td>Tue Apr 05 22:34:51 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('db3e43be1a', 'Cancel Service')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('db3e43be1a', 'Cancel Service')">📊 BPMN</button></td>
+                        <td>69</td>
+                        <td><strong>Cancel Service</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Telstra LOLO</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User15</td>
+                        <td>Mon Nov 12 19:30:18 CST 2012</td>
+                        <td>Mon Nov 19 19:08:55 CST 2012</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b61', 'M2 15.6.7 Manage Employee Communication')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b61', 'M2 15.6.7 Manage Employee Communication')">📊 BPMN</button></td>
+                        <td>70</td>
+                        <td><strong>M2 15.6.7 Manage Employee Communication</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('67eb1f6bf5', '2.2.6.55 Duplicate PPS Number (Without DSP File)')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('67eb1f6bf5', '2.2.6.55 Duplicate PPS Number (Without DSP File)')">📊 BPMN</button></td>
+                        <td>71</td>
+                        <td><strong>2.2.6.55 Duplicate PPS Number (Without DSP File)</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>02.0 Manage Customer Service</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:15:06 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('10000ae3d3e3c00', 'Manage product and service portfolio')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('10000ae3d3e3c00', 'Manage product and service portfolio')">📊 BPMN</button></td>
+                        <td>72</td>
+                        <td><strong>Manage product and service portfolio</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Lorenco&#x27;s Playground</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User7</td>
+                        <td>Wed Oct 05 22:37:17 CDT 2011</td>
+                        <td>Wed Oct 05 22:37:58 CDT 2011</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('6ef8cef1a', '15.5.2.8 Manage Redundancies')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('6ef8cef1a', '15.5.2.8 Manage Redundancies')">📊 BPMN</button></td>
+                        <td>73</td>
+                        <td><strong>15.5.2.8 Manage Redundancies</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>M2 Copy of 15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('7ef8c6f19', '3.3.5 Debt Collection')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('7ef8c6f19', '3.3.5 Debt Collection')">📊 BPMN</button></td>
+                        <td>74</td>
+                        <td><strong>3.3.5 Debt Collection</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>03.0 Bill &amp; Collect</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('3a3ef33e5d', 'Rotable Management Process Selection')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('3a3ef33e5d', 'Rotable Management Process Selection')">📊 BPMN</button></td>
+                        <td>75</td>
+                        <td><strong>Rotable Management Process Selection</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Newcrest</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User16</td>
+                        <td>Sun May 12 21:50:51 CDT 2013</td>
+                        <td>Sun May 12 21:51:03 CDT 2013</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('30eca7ec02', 'User9 Getting Started Process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('30eca7ec02', 'User9 Getting Started Process')">📊 BPMN</button></td>
+                        <td>76</td>
+                        <td><strong>User9 Getting Started Process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User9 Training Space</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User9</td>
+                        <td>Thu Dec 26 23:14:12 CST 2019</td>
+                        <td>Mon Jun 27 22:47:15 CDT 2022</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('1febc96b4e', 'M3 8.1.5.5.2 Agree Functional Units/Cost Centres required to report')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('1febc96b4e', 'M3 8.1.5.5.2 Agree Functional Units/Cost Centres required to report')">📊 BPMN</button></td>
+                        <td>77</td>
+                        <td><strong>M3 8.1.5.5.2 Agree Functional Units/Cost Centres required to report</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('40000fd405a440d', 'SC1.21 Change PIN')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('40000fd405a440d', 'SC1.21 Change PIN')">📊 BPMN</button></td>
+                        <td>78</td>
+                        <td><strong>SC1.21 Change PIN</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>Telstra LOLO</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User2</td>
+                        <td>Mon May 19 23:21:03 CDT 2014</td>
+                        <td>Mon May 19 23:21:06 CDT 2014</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('9d3d193d2e', 'Claims Payment - from template')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('9d3d193d2e', 'Claims Payment - from template')">📊 BPMN</button></td>
+                        <td>79</td>
+                        <td><strong>Claims Payment - from template</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>gv - tests</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User10</td>
+                        <td>Mon Aug 22 23:02:19 CDT 2011</td>
+                        <td>Mon Aug 22 23:04:00 CDT 2011</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b5c', 'M2 15.6.3 Manage and maintain employee data')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b5c', 'M2 15.6.3 Manage and maintain employee data')">📊 BPMN</button></td>
+                        <td>80</td>
+                        <td><strong>M2 15.6.3 Manage and maintain employee data</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('8ef8c6f33', 'M3 17.4.1.25 Car Parking Guidelines')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('8ef8c6f33', 'M3 17.4.1.25 Car Parking Guidelines')">📊 BPMN</button></td>
+                        <td>81</td>
+                        <td><strong>M3 17.4.1.25 Car Parking Guidelines</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>17.0 Manage Legal and Property</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b51', 'M2 15.6.1 Manage reporting processes')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b51', 'M2 15.6.1 Manage reporting processes')">📊 BPMN</button></td>
+                        <td>82</td>
+                        <td><strong>M2 15.6.1 Manage reporting processes</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('29ead56a44', 'M3 8.6.4.6 Stop &amp; Void Payments')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('29ead56a44', 'M3 8.6.4.6 Stop &amp; Void Payments')">📊 BPMN</button></td>
+                        <td>83</td>
+                        <td><strong>M3 8.6.4.6 Stop &amp; Void Payments</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:45:02 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6f3e', 'M3 16.5.2.2 Plan Release Strategy')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6f3e', 'M3 16.5.2.2 Plan Release Strategy')">📊 BPMN</button></td>
+                        <td>84</td>
+                        <td><strong>M3 16.5.2.2 Plan Release Strategy</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('24ead56a48', '15.5.10.1 Process Employee Relocation')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('24ead56a48', '15.5.10.1 Process Employee Relocation')">📊 BPMN</button></td>
+                        <td>85</td>
+                        <td><strong>15.5.10.1 Process Employee Relocation</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:44:05 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('23ead56a4f', 'M3 16.7.6.2 Identify Business Service Continuity Requirements')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('23ead56a4f', 'M3 16.7.6.2 Identify Business Service Continuity Requirements')">📊 BPMN</button></td>
+                        <td>86</td>
+                        <td><strong>M3 16.7.6.2 Identify Business Service Continuity Requirements</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:43:53 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('29ead5ea46', 'M3 4.2.3.21 Maintain Purchasing Buyers')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('29ead5ea46', 'M3 4.2.3.21 Maintain Purchasing Buyers')">📊 BPMN</button></td>
+                        <td>87</td>
+                        <td><strong>M3 4.2.3.21 Maintain Purchasing Buyers</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>04.0 Procurement and Supply Chain</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:45:04 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('6aeb1febcf', 'M3 15.1.2 Develop and Implement Human Resources Plans')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('6aeb1febcf', 'M3 15.1.2 Develop and Implement Human Resources Plans')">📊 BPMN</button></td>
+                        <td>88</td>
+                        <td><strong>M3 15.1.2 Develop and Implement Human Resources Plans</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>M2 Copy of 15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:15:51 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6bc0', 'M3 8.13.2 Maintain Fixed Asset Standing Data')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6bc0', 'M3 8.13.2 Maintain Fixed Asset Standing Data')">📊 BPMN</button></td>
+                        <td>89</td>
+                        <td><strong>M3 8.13.2 Maintain Fixed Asset Standing Data</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:46 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('65eb1f6bc6', 'M3 8.1.11.4.2 Produce current RAB Report')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('65eb1f6bc6', 'M3 8.1.11.4.2 Produce current RAB Report')">📊 BPMN</button></td>
+                        <td>90</td>
+                        <td><strong>M3 8.1.11.4.2 Produce current RAB Report</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>08.0 Manage Financial Resources</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Wed Jun 29 23:14:44 CDT 2016</td>
+                        <td>Wed Jun 29 23:15:57 CDT 2016</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('25ead56a4d', 'M3 17.3.1.5 Fleet Policies &amp; Strategy')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('25ead56a4d', 'M3 17.3.1.5 Fleet Policies &amp; Strategy')">📊 BPMN</button></td>
+                        <td>91</td>
+                        <td><strong>M3 17.3.1.5 Fleet Policies &amp; Strategy</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>17.0 Manage Legal and Property</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User5</td>
+                        <td>Mon Oct 19 20:44:17 CDT 2015</td>
+                        <td>Mon Oct 19 20:45:27 CDT 2015</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('20ebc96b57', 'M2 15.6.2 Manage employee inquiry process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('20ebc96b57', 'M2 15.6.2 Manage employee inquiry process')">📊 BPMN</button></td>
+                        <td>92</td>
+                        <td><strong>M2 15.6.2 Manage employee inquiry process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 04 18:38:51 CST 2017</td>
+                        <td>Mon Dec 04 18:39:01 CST 2017</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('6ef8cef4d', '15.8.5 Manage the KM Project Life Cycle')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('6ef8cef4d', '15.8.5 Manage the KM Project Life Cycle')">📊 BPMN</button></td>
+                        <td>93</td>
+                        <td><strong>15.8.5 Manage the KM Project Life Cycle</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>M2 Copy of 15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('29ed036de3', '15.9 Manage Change')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('29ed036de3', '15.9 Manage Change')">📊 BPMN</button></td>
+                        <td>94</td>
+                        <td><strong>15.9 Manage Change</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>M2 Copy of 15.0 Manage People</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6f4c', 'M3 16.5.2.3 Design and Build Release')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6f4c', 'M3 16.5.2.3 Design and Build Release')">📊 BPMN</button></td>
+                        <td>95</td>
+                        <td><strong>M3 16.5.2.3 Design and Build Release</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03edf6', 'M3 4.2 Procure Materials &amp; Services')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03edf6', 'M3 4.2 Procure Materials &amp; Services')">📊 BPMN</button></td>
+                        <td>96</td>
+                        <td><strong>M3 4.2 Procure Materials &amp; Services</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>04.0 Procurement and Supply Chain</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('ab3d5cbd23', '0 new process')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('ab3d5cbd23', '0 new process')">📊 BPMN</button></td>
+                        <td>97</td>
+                        <td><strong>0 new process</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>User2 - Sandbox Space</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User2</td>
+                        <td>Mon Dec 05 18:13:51 CST 2011</td>
+                        <td>Sat Dec 10 04:02:30 CST 2011</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03edf0', 'M3 4.1 Procurement Procedures')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03edf0', 'M3 4.1 Procurement Procedures')">📊 BPMN</button></td>
+                        <td>98</td>
+                        <td><strong>M3 4.1 Procurement Procedures</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>04.0 Procurement and Supply Chain</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('26ed03edfc', 'M3 4.3 Manage logistics and warehousing')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('26ed03edfc', 'M3 4.3 Manage logistics and warehousing')">📊 BPMN</button></td>
+                        <td>99</td>
+                        <td><strong>M3 4.3 Manage logistics and warehousing</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>04.0 Procurement and Supply Chain</td>
+                        <td class="status-inactive">✗ Inactive</td>
+                        <td>User1</td>
+                        <td>Mon Dec 14 16:29:19 CST 2020</td>
+                        <td>Mon Dec 14 16:29:27 CST 2020</td>
+                    </tr>
+                    <tr>
+                        <td><button class="download-btn" onclick="downloadBlueprint('aef8c6f5b', 'M3 16.5.5 Asset Management')">📥 PDF</button><button class="download-btn bpmn" onclick="downloadBPMN('aef8c6f5b', 'M3 16.5.5 Asset Management')">📊 BPMN</button></td>
+                        <td>100</td>
+                        <td><strong>M3 16.5.5 Asset Management</strong></td>
+                        <td><span class="type-badge type-blueprint">Blueprint</span></td>
+                        <td>16.0 Manage information systems</td>
+                        <td class="status-active">✓ Active</td>
+                        <td>User1</td>
+                        <td>Sun Dec 07 21:39:55 CST 2025</td>
+                        <td>Sun Dec 07 21:40:06 CST 2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <p>Generated from blueworks_artifacts.csv | Showing First 100 Records</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #dc3545;">
+                <strong>Note:</strong> Make sure the proxy server is running: <code>python blueworks_proxy_server.py</code>
+            </p>
+        </div>
+    </div>
+    <script>
+        // Use local proxy server to avoid CORS issues
+        const PROXY_URL = 'http://localhost:5000';
+        
+        async function downloadBlueprint(blueprintId, blueprintName) {
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = '⏳ Loading...';
+            
+            try {
+                // Call local proxy server
+                const apiUrl = PROXY_URL + '/api/download-blueprint/' + blueprintId + '?name=' + encodeURIComponent(blueprintName);
+                
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error('HTTP error! status: ' + response.status);
+                }
+                
+                // Get the PDF blob
+                const blob = await response.blob();
+                
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = blueprintName.replace(/[^a-z0-9]/gi, '_') + '.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                btn.disabled = false;
+                btn.textContent = '📥 PDF';
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Failed to download blueprint: ' + error.message);
+                btn.disabled = false;
+                btn.textContent = '📥 PDF';
+            }
+        }
+        
+        async function downloadBPMN(blueprintId, blueprintName) {
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = '⏳ Loading...';
+            
+            try {
+                // Call local proxy server for BPMN export
+                const apiUrl = PROXY_URL + '/api/download-bpmn/' + blueprintId + '?name=' + encodeURIComponent(blueprintName);
+                
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error('HTTP error! status: ' + response.status);
+                }
+                
+                // Get the BPMN XML blob
+                const blob = await response.blob();
+                
+                // Create download link
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = blueprintName.replace(/[^a-z0-9]/gi, '_') + '.bpmn';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+                
+                btn.disabled = false;
+                btn.textContent = '📊 BPMN';
+                
+            } catch (error) {
+                console.error('Download error:', error);
+                alert('Failed to download BPMN: ' + error.message);
+                btn.disabled = false;
+                btn.textContent = '📊 BPMN';
+            }
+        }
+        
+        async function bulkDownloadBlueprints() {
+            const bulkBtn = document.getElementById('bulkDownloadBtn');
+            const downloadButtons = document.querySelectorAll('.download-btn:not(.bpmn)');
+            
+            if (downloadButtons.length === 0) {
+                alert('No blueprints found on this page to download.');
+                return;
+            }
+            
+            const confirmed = confirm(`This will download ${downloadButtons.length} blueprints. Continue?`);
+            if (!confirmed) return;
+            
+            bulkBtn.disabled = true;
+            bulkBtn.textContent = '⏳ Downloading 0/' + downloadButtons.length;
+            
+            let completed = 0;
+            let failed = 0;
+            
+            // Download with delay to avoid overwhelming the server
+            for (let i = 0; i < downloadButtons.length; i++) {
+                const btn = downloadButtons[i];
+                const blueprintId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                const blueprintName = btn.getAttribute('onclick').match(/'([^']+)', '([^']+)'/)[2];
+                
+                try {
+                    bulkBtn.textContent = `⏳ Downloading ${completed + 1}/${downloadButtons.length}`;
+                    
+                    const apiUrl = PROXY_URL + '/api/download-blueprint/' + blueprintId + '?name=' + encodeURIComponent(blueprintName);
+                    const response = await fetch(apiUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error('HTTP error! status: ' + response.status);
+                    }
+                    
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = blueprintName.replace(/[^a-z0-9]/gi, '_') + '.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    completed++;
+                    
+                    // Small delay between downloads
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                } catch (error) {
+                    console.error(`Failed to download ${blueprintName}:`, error);
+                    failed++;
+                }
+            }
+            
+            bulkBtn.disabled = false;
+            bulkBtn.textContent = '📥 Bulk Download All Blueprints';
+            
+            if (failed > 0) {
+                alert(`Bulk download complete!\n\nSuccessful: ${completed}\nFailed: ${failed}`);
+            } else {
+                alert(`Successfully downloaded all ${completed} blueprints!`);
+            }
+        }
+        
+        async function bulkDownloadBPMN() {
+            const bulkBtn = document.getElementById('bulkDownloadBPMNBtn');
+            const bpmnButtons = document.querySelectorAll('.download-btn.bpmn');
+            
+            if (bpmnButtons.length === 0) {
+                alert('No BPMN files found on this page to download.');
+                return;
+            }
+            
+            const confirmed = confirm(`This will download ${bpmnButtons.length} BPMN files. Continue?`);
+            if (!confirmed) return;
+            
+            bulkBtn.disabled = true;
+            bulkBtn.textContent = '⏳ Downloading 0/' + bpmnButtons.length;
+            
+            let completed = 0;
+            let failed = 0;
+            
+            // Download with delay to avoid overwhelming the server
+            for (let i = 0; i < bpmnButtons.length; i++) {
+                const btn = bpmnButtons[i];
+                const blueprintId = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                const blueprintName = btn.getAttribute('onclick').match(/'([^']+)', '([^']+)'/)[2];
+                
+                try {
+                    bulkBtn.textContent = `⏳ Downloading ${completed + 1}/${bpmnButtons.length}`;
+                    
+                    const apiUrl = PROXY_URL + '/api/download-bpmn/' + blueprintId + '?name=' + encodeURIComponent(blueprintName);
+                    const response = await fetch(apiUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error('HTTP error! status: ' + response.status);
+                    }
+                    
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = blueprintName.replace(/[^a-z0-9]/gi, '_') + '.bpmn';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    completed++;
+                    
+                    // Small delay between downloads
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    
+                } catch (error) {
+                    console.error(`Failed to download ${blueprintName}:`, error);
+                    failed++;
+                }
+            }
+            
+            bulkBtn.disabled = false;
+            bulkBtn.textContent = '📊 Bulk Download All BPMN';
+            
+            if (failed > 0) {
+                alert(`Bulk download complete!\n\nSuccessful: ${completed}\nFailed: ${failed}`);
+            } else {
+                alert(`Successfully downloaded all ${completed} BPMN files!`);
+            }
+        }
+    </script>
+</body>
+</html>
