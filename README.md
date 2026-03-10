@@ -7,12 +7,9 @@ This project provides a web-based interface for viewing and bulk downloading Blu
 ### Core Application Files
 - **blueworks_artifacts.html** - Main HTML page displaying first 100 artifacts with download capabilities
 - **blueworks_proxy_server.py** - Flask proxy server handling OAuth authentication and API calls
-- **user_analytics.html** - User analytics dashboard with charts and statistics
-- **users_list.html** - List of all Blueworks Live users
 
 ### Data Files
 - **blueworks_artifacts.csv** - CSV export of all Blueworks Live artifacts
-- **active_users.json** - JSON file containing active user data
 - **bobAPIArtifactReporting.json** - Authentication credentials for Blueworks Live API
 
 ### Generator Script
@@ -28,14 +25,6 @@ This project provides a web-based interface for viewing and bulk downloading Blu
 - ✅ Active/Inactive status indicators
 - ✅ Cross-navigation to other pages
 
-### User Analytics Dashboard
-- ✅ Total users and growth metrics
-- ✅ Monthly registration trends
-- ✅ Day of week analysis
-- ✅ User roles distribution
-- ✅ Cumulative growth chart
-- ✅ Daily activity (last 90 days)
-- ✅ License status breakdown
 
 ## Setup Instructions
 
@@ -75,8 +64,6 @@ The server will start on http://localhost:5000
 
 2. **Open the HTML pages** in your web browser:
    - `blueworks_artifacts.html` - Main artifacts viewer
-   - `user_analytics.html` - Analytics dashboard
-   - `users_list.html` - Users list
 
 ## Usage
 
@@ -96,12 +83,6 @@ The server will start on http://localhost:5000
 3. All Blueprint PDFs will be downloaded sequentially
 4. Progress is shown on the button
 5. A summary is displayed when complete
-
-### Viewing Analytics
-1. Open `user_analytics.html` in your browser
-2. View various charts and statistics
-3. Use the time range selector to filter data
-4. Navigate to other pages using the top navigation bar
 
 ## Authentication
 
@@ -145,7 +126,7 @@ The proxy server provides the following endpoint:
 - Refresh the page
 
 ### Empty Data
-- Verify `blueworks_artifacts.csv` and `active_users.json` contain data
+- Verify `blueworks_artifacts.csv`  contain data
 - Check file paths are correct
 - Ensure files are in the same directory as HTML files
 
@@ -177,3 +158,4 @@ https://www.ibm.com/docs/en/blueworks-live
 Created: March 2026
 
 Last Updated: March 9, 2026
+
