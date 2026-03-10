@@ -42,9 +42,12 @@ This project provides a web-based interface for viewing and bulk downloading Blu
 High level steps:
 
 1: generate your own API keys from the www.blueworkslive.com website and put the .json files in the project folder. 
+
 2: update the blueworks_api_client.py and blueworks_proxy_server.py with the correct API key .json file names and base URL, e.g. https://mcb.blueworkslive.com
+
 3: start the proxy server to enable downloading. e.g. 
 Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'c:/bob/blueworkslive/bulk export' ; python blueworks_proxy_server.py"
+
 4: open the blueworks_artifacts.html page to view the first 100 processes and download them.
 
 
@@ -172,4 +175,5 @@ https://www.ibm.com/docs/en/blueworks-live
 ## Version
 
 Created: March 2026
+
 Last Updated: March 9, 2026
