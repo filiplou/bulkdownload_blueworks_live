@@ -23,7 +23,6 @@ This project provides a web-based interface for viewing and bulk downloading Blu
 - ✅ Bulk download feature to download all Blueprints at once
 - ✅ Color-coded artifact types (Blueprint, Space, Policy, Decision, Process App)
 - ✅ Active/Inactive status indicators
-- ✅ Cross-navigation to other pages
 
 
 ## Setup Instructions
@@ -158,4 +157,5 @@ https://www.ibm.com/docs/en/blueworks-live
 Created: March 2026
 
 Last Updated: March 9, 2026
+
 
